@@ -1,0 +1,24 @@
+#mensajepopup {
+	
+	background: #FFF;
+	border: 1px solid #999999;
+	border-radius: .5em;
+	position: absolute;
+	left: 50%;
+	padding: 1em;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	text-align: center;
+	min-width: 300px;
+
+}
+#popup{
+
+	position: fixed;
+	width: 100%;
+	background: rgba(255,255,255,0.73);
+	top: 0;
+	z-index: 1;
+
+}
