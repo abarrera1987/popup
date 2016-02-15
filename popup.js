@@ -52,3 +52,29 @@ function cerrarPopup () {
 	$('#popup').fadeOut(1000,function(){$(this).remove();$('body').css({'overflow-y':'auto'});});
 
 }
+
+function mensajeFalsePopup (mensaje, destino) {
+
+	$("body").css({"overflow-y":"hidden"});
+
+	var ventana_alto = $(window).height();
+
+	$('#mensajepopup').text('');
+
+	$("body").append("<div id='popup'><div id='mensajepopup'></div></div>")
+
+	$("#popup").css('height', ventana_alto);
+
+	$("#mensajepopup").append("<div>"+mensaje+"</div>");
+
+	setTimeout(function(){
+
+		cerrarPopup();
+
+		return false;
+
+	}, 1500);
+
+	$("#popup").fadeIn("slow");
+
+}
