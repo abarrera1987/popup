@@ -53,7 +53,7 @@ function cerrarPopup () {
 
 }
 
-function mensajeFalsePopup (mensaje, destino) {
+function mensajeFalsePopup (mensaje) {
 
 	$("body").css({"overflow-y":"hidden"});
 
