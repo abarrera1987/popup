@@ -18,8 +18,6 @@ function mensajePopup (mensaje, destino) {
 
 	}, 1500);
 
-	$("#popup").fadeIn("slow");
-
 }
 /* 
 
@@ -30,8 +28,6 @@ fn: funcion que se debe ejecutar al decir si
 */
 function confirmPopup (mensaje,fn) {
 	
-
-
 	$("body").css({"overflow-y":"hidden"});
 
 	var ventana_alto = $(window).height();
@@ -42,15 +38,18 @@ function confirmPopup (mensaje,fn) {
 
 	$("#popup").css('height', ventana_alto);
 
-	$("#mensajepopup").append("<div>"+mensaje+"</div><br><label class='botones' onclick='"+fn+"' id='si'>Si</label> <label class='botones' onclick='cerrarPopup()' id='no'>No</label>");
+	$("#mensajepopup").append("<div>"+mensaje+"</div><br><div><label onclick='cerrarPopup()' id='no'>Cancelar</label> <label onclick='"+fn+"' id='si'>Confirmar</label></div><script>$(document).keydown(function(e){ if(e.which == 27){ cerrarPopup() }});");
 
-	$("#popup").fadeIn("slow");
 }
 
 function cerrarPopup () {
 
-	$('#popup').fadeOut(1000,function(){$(this).remove();$('body').css({'overflow-y':'auto'});});
+	$('body').css({'overflow-y':'auto'});
 
+	$("#mensajepopup").remove();
+
+	$('#popup').remove();
+	
 }
 
 function mensajeFalsePopup (mensaje) {
@@ -73,7 +72,7 @@ function mensajeFalsePopup (mensaje) {
 
 		return false;
 
-	}, 1500);
+	}, 2000);
 
 	$("#popup").fadeIn("slow");
 
